@@ -11,6 +11,8 @@ namespace TobiasRymdspel
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        //6.5.1
+        Texture2D ship_texture; 
 
         public Game1()
         {
@@ -41,6 +43,8 @@ namespace TobiasRymdspel
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            //6.5.1
+            ship_texture = Content.Load<Texture2D>("ship");
         }
 
         /// <summary>
@@ -76,6 +80,11 @@ namespace TobiasRymdspel
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
+            //6.5.2
+            spriteBatch.Begin();
+            spriteBatch.Draw(ship_texture, Vector2.Zero, Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
